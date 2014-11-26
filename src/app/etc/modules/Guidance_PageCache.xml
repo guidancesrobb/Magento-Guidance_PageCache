@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Force page cache clearing
+ *
+ * @author    Guidance Magento Team <magento@guidance.com>
+ * @category  Guidance
+ * @package   Guidance_PageCache
+ * @copyright Copyright (c) 2014 Guidance Solutions (http://www.guidance.com)
+ */
+-->
+<config>
+    <modules>
+        <Guidance_PageCache>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Enterprise_PageCache/>
+            </depends>
+        </Guidance_PageCache>
+    </modules>
+</config>

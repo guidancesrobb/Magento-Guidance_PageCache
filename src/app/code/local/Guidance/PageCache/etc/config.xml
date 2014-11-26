@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Force page cache clearing
+ *
+ * @author    Guidance Magento Team <magento@guidance.com>
+ * @category  Guidance
+ * @package   Guidance_PageCache
+ * @copyright Copyright (c) 2014 Guidance Solutions (http://www.guidance.com)
+ */
+-->
+<config>
+    <modules>
+        <Guidance_PageCache>
+            <version>1.0.0</version>
+        </Guidance_PageCache>
+    </modules>
+    <global>
+        <models>
+            <guidance_pagecache>
+                <class>Guidance_PageCache_Model</class>
+            </guidance_pagecache>
+        </models>
+    </global>
+    <adminhtml>
+        <events>
+            <adminhtml_cache_flush_all>
+                <observers>
+                    <enterprise_pagecache>
+                        <class>guidance_pagecache/observer</class>
+                        <method>cleanCache</method>
+                    </enterprise_pagecache>
+                </observers>
+            </adminhtml_cache_flush_all>
+            <adminhtml_cache_flush_system>
+                <observers>
+                    <enterprise_pagecache>
+                        <class>guidance_pagecache/observer</class>
+                        <method>cleanCache</method>
+                    </enterprise_pagecache>
+                </observers>
+            </adminhtml_cache_flush_system>
+            <adminhtml_cache_refresh_type>
+                <observers>
+                    <enterprise_pagecache>
+                        <class>guidance_pagecache/observer</class>
+                        <method>cleanCache</method>
+                    </enterprise_pagecache>
+                </observers>
+            </adminhtml_cache_refresh_type>
+        </events>
+    </adminhtml>
+</config>
